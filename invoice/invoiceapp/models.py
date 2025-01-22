@@ -30,7 +30,7 @@ class Client(models.Model):
     client_country = models.CharField(max_length=100)
     client_phone = models.CharField(max_length=100)
     client_mail = models.EmailField(max_length=100)
-    client_address = models.CharField(max_length=100)
+   
 class Facture(models.Model):
     title = models.TextField()
     topic = models.TextField()
