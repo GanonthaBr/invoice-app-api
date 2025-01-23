@@ -1,4 +1,4 @@
-POST http://127.0.0.1:8000/invoices/
+POST http://127.0.0.1:8000/api/invoices/
 Content-Type: application/json
 
 
@@ -6,8 +6,8 @@ Content-Type: application/json
     "topic": "Invoice for services rendered",
     "echeance": "2023-10-01",
     "client": 1,
-    "tax": 10,
-    "type_tax": "VAT",
+    "tax": "False",
+    "type_tax": "ISB",
     "number":1,
     "payment_mode": "Credit Card",
     "designations": [
