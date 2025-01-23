@@ -36,9 +36,6 @@ class Invoice(models.Model):
     number = models.CharField(max_length=100)
     echeance = models.DateField()
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-
-    
-
     tax = models.IntegerField()
     type_tax = models.CharField(max_length=100)
     payment_mode = models.TextField()
@@ -54,7 +51,7 @@ class Invoice(models.Model):
         super().save(*args,**kwargs)
     @property
     def total_amount(self):
-        total = sum(designation.price for designation in self.designations.all())
+        total = sum(designation.designation_price for designation in self.designations.all())
         total_with_tax = total + (total * self.tax/100)
         return total_with_tax
     
@@ -63,7 +60,7 @@ class Designation(models.Model):
     designation_title = models.TextField()
     designation_details = models.TextField()
     designation_unit_price = models.DecimalField(max_digits=10,decimal_places=2)
-    designation_quantity = models.IntegerField(max_length=20)
+    designation_quantity = models.IntegerField()
 
     @property
     def designation_price(self):
