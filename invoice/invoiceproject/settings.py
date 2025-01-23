@@ -39,7 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'invoiceapp.urls'
+ROOT_URLCONF = 'invoiceproject.urls'
 
 TEMPLATES = [
     {
