@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,526 +9,172 @@
     <link href="logo.png" rel="icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
-
-
-
 <style>
     body {
         font-family: "Roboto", sans-serif;
-        margin-top: 5px;
         background-color: #f7f7ff;
+        margin: 0;
+        padding: 0;
     }
     a{
         text-decoration: none;
         color: #61a1d6;
     }
     .text-end a {
-
-
-
         color: #fff;
-
-
-
     }
     .company p {
-
-
-
         font-size: 12px;
-
-
-
         text-align: center;
-
-
-
     }
     .company-details span {
-
-
-
         font-size: 14px;
-
-
-
     }
-
     .container {
-
         display: flex;
-
-
-
         justify-content: center;
-
-
-
         width: 100%;
-
-
-
         background-color: #fff;
-
-
-
         padding: 5px;
-
-
-
         border-radius: 10px;
-
-
-
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-
-
     }
     .container form {
-
-
-
         width: 100%;
-
-
-
-        /* max-width: 600px; */
-
-
-
         padding: 20px;
-
-
-
         border-radius: 10px;
-
-
-
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-
-
     }
     .mb-3 {
-
-
-
         width: 100%;
-
-
-
         margin-bottom: 1rem;
-
-
-
     }
     .itemField {
-
-
-
         width: 100%;
-
-
-
     }
     #invoice {
-
-
-
         padding: 0px;
-
-
-
     }
     .header-div {
-
-
-
         min-width: 600px;
-
-
-
     }
     .invoice {
-
-
-
         position: relative;
-
-
-
         background-color: #fff;
-
-
-
         min-height: 680px;
-
-
-
         padding: 5px;
-
-
-
     }
     .invoice header {
-
-
-
         padding: 5px 0;
-
-
-
         margin-bottom: 5px;
-
-
-
         border-bottom: 1px solid #61a1d6;
-
-
-
     }
     .invoice .company-details {
-
-
-
         text-align: right;
-
-
-
     }
     .invoice .company-details .details {
-
-
-
         text-align: left;
-
-
-
     }
     .invoice .company-details .name {
-
-
-
         margin-top: 0;
-
-
-
         margin-bottom: 0;
-
-
-
     }
     .invoice .company-details .name a {
-
-
-
         color: #61a1d6;
-
         font-size: 27px;
-
-
-
     }
     .invoice .contacts {
-
-
-
         margin-bottom: 5px;
-
         font-size: 12px;
-
-
-
     }
     .invoice .invoice-to {
-
-
-
         text-align: left;
-
-
-
     }
     .invoice .invoice-to .to {
-
-
-
         margin-top: 0;
-
-
-
         margin-bottom: 0;
-
-
-
     }
     .invoice .invoice-details {
-
-
-
         text-align: right;
-
-
-
     }
     .invoice .invoice-details .invoice-id {
-
-
-
         margin-top: 0;
-
-
-
         color: #61a1d6;
-
-
-
         font-size: 14px;
-
-
-
     }
     .designation {
-
-
-
         font-size: 12px;
-
-
-
         text-align: center;
-
-
-
-    }.designation h2 {
-
+    }
+    .designation h2 {
         font-size: 16px;
-
         padding: 2px 3px;
-
-
-
         border: 1px solid #61a1d6;
-
-
-
         margin-top: 0;
-
-
-
         color: #61a1d6;
-
-
-
     }
     .invoice main {
-
-
-
         padding-bottom: 20px;
-
-
-
     }
     .invoice main .thanks {
-
-
-
         margin-top: -80px;
-
-
-
         font-size: 1em;
-
-
-
         margin-top: 10px;
-
         margin-bottom: 10px;
-
-
-
     }
     .invoice main .notices {
-
         padding: 5px;
-
-
-
         padding-left: 6px;
-
-
-
         border-left: 6px solid #61a1d6;
-
-
-
         background: #e7f2ff;
-
-
-
-
-
     }
     .invoice main .notices .title {
-
-
-
         color: #61a1d6;
-
-
-
         text-decoration: underline;
-
-
-
     }
     .invoice main .notices .notice {
-
-
-
         font-size: 0.7em;
-
-
-
     }
     .invoice table {
-
-
-
         width: 100%;
-
-
-
         border-collapse: collapse;
-
-
-
         border-spacing: 0;
-
-
-
         margin-bottom: 10px;
-
-
-
     }
     .invoice table td,.invoice table th {
-
-
-
         padding: 5px;
-
-
-
         background: #eee;
-
-
-
         border-bottom: 1px solid #fff;
-
-
-
     }
     .invoice table th {
-
-
-
         white-space: nowrap;
-
-
-
         font-weight: 400;
-
-
-
         font-size: 12px;
-
-
-
     }
     .invoice table td h3 {
-
-
-
         margin: 0;
-
-
-
         font-weight: 400;
-
-
-
         color: #61a1d6;
-
-
-
         font-size: 14px;
-
-
-
     }
     .invoice table .qty,.invoice table .total, .invoice table .unit {
-
-
-
         text-align: center;
-
-
-
         font-size: 12px;
-
-
-
     }
     .invoice table .no {
-
-
-
         color: #fff;
-
-
-
         font-size: 12px;
-
-
-
         background: #61a1d6;
-
-
-
     }
     .invoice table .unit {
-
-
-
         background: #ddd;
-
-
-
     }
     .invoice table .total {
-
-
-
         background: #61a1d6;
-
-
-
         color: #fff;
-
-
-
     }
     .invoice table tbody tr:last-child td {
-
-
-
         border: none;
-
-
-
     }
     .invoice table tfoot td {
         background: #fff;
@@ -544,30 +189,12 @@
         border-top: none;
     }
     .invoice table tfoot tr:last-child td {
-
-
-
         color: #61a1d6;
-
-
-
         font-size: 12px;
-
-
-
         border-top: 1px solid #61a1d6;
-
-
-
     }
     .invoice table tfoot tr td:first-child {
-
-
-
         border: none;
-
-
-
     }
     .invoice footer {
         width: 100%;
@@ -585,61 +212,22 @@
             overflow: hidden !important;
         }
         .invoice footer {
-
-
-
             position: absolute;
-
-
-
             bottom: 10px;
-
-
-
             page-break-after: always;
-
-
-
         }
         .invoice>div:last-child {
-
-
-
             page-break-before: always;
-
-
-
         }
     }
     .invoice main .notices {
-
         padding: 7px;
-
-
-
         padding-left: 6px;
-
-
-
         border-left: 6px solid #61a1d6;
-
-
-
         background: #e7f2ff;
-
-
-
-
-
     }
     .invoice .text-left p {
-
-
-
         font-size: 10px;
-
-
-
     }
     .invoice .text-left h4 {
         font-size: 12px;
@@ -649,7 +237,6 @@
     }
     .info {
         width: 100%;
-        /*display:flex;*/
         flex-direction: column;
         justify-content: space-between;
     }
@@ -659,7 +246,7 @@
     th {
         font-weight: bold;
     }
-.header-content table td,.header-content table th,.contacts table th,.contacts table td {
+    .header-content table td,.header-content table th,.contacts table th,.contacts table td {
         font-size: 10px;
         padding: 3px;
         background: #fff !important;
