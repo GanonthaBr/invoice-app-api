@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -15,7 +16,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# settings.py
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Application definition
 
 INSTALLED_APPS = [

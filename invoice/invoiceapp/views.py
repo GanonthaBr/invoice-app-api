@@ -1,14 +1,13 @@
-from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.decorators import action
-from rest_framework.response import Response
 from .models import Invoice, Client, Designation
 from .serializers import InvoiceSerializer, ClientSerializer, DesignationSerializer
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
 from django.template.loader import get_template
+
 from xhtml2pdf import pisa
 from django.http import HttpResponse
+from django.contrib.staticfiles import finders
+import os
 
 # Create your views here.
 class ClientViewSet(viewsets.ModelViewSet):
@@ -26,7 +25,10 @@ class InvoiceViewSet(viewsets.ModelViewSet):
     def download_pdf(self, request, pk=None):
         invoice = self.get_object()
         template_path = 'invoice_pdf.html'
-        context = {'invoice': invoice}
+        logo_path = finders.find('logo.png')
+        if logo_path:
+            logo_path = os.path.abspath(logo_path)
+        context = {'invoice': invoice, 'logo_path':logo_path}
         response = HttpResponse(content_type='application/pdf')
         response['Content-Disposition'] = f'attachment; filename="invoice_{invoice.id}.pdf"'
         template = get_template(template_path)

@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>Invoice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
     <!-- Favicon -->
     <link href="logo.png" rel="icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -16,6 +18,10 @@
         font-family: "Roboto", sans-serif;
         margin-top: 5px;
         background-color: #f7f7ff;
+    }
+    a{
+        text-decoration: none;
+        color: #61a1d6;
     }
     .text-end a {
 
@@ -681,7 +687,7 @@
                                     <td>
                                         <div class="col">
                                             <a href="#">
-                                                <img src="" width="180" height="140" alt="logo" />
+                                                <img src="{{ logo_path}}" width="180" height="140" alt="logo" />
                                             </a>
                                         </div>
                                     </td>
