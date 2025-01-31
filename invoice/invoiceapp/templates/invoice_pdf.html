@@ -56,10 +56,12 @@
         padding: 0px;
     }
     .header-div {
-        min-width: 600px;
+        padding: 0;
+        margin: 0;
+        /* min-width: 600px; */
     }
     .invoice {
-        position: relative;
+        position: absolute;
         background-color: #fff;
         min-height: 680px;
         padding: 5px;
@@ -114,7 +116,7 @@
         color: #61a1d6;
     }
     .invoice main {
-        padding-bottom: 20px;
+        padding-bottom: 2px;
     }
     .invoice main .thanks {
         margin-top: -80px;
@@ -196,29 +198,40 @@
     .invoice table tfoot tr td:first-child {
         border: none;
     }
-    .invoice footer {
+    footer {
+        bottom: 10px;
         width: 100%;
-        text-align: center;
         color: #777;
         border-top: 1px solid #aaa;
-        padding: 5px 0;
+        padding: 0;
+        text-align: center;
     }
     footer span {
         font-size: 10px;
     }
+    footer b{
+        text-align: center;
+    }
     @media print {
+        .header-div{
+            margin: 0;
+            padding: 0;
+        }
         .invoice {
             font-size: 11px !important;
             overflow: hidden !important;
+            padding: 0;
         }
-        .invoice footer {
-            position: absolute;
+        footer {
             bottom: 10px;
-            page-break-after: always;
+            width: 100%;
+            padding: 0;
+            margin-top: 100px;
+            /* page-break-after: always; */
         }
-        .invoice>div:last-child {
+        /* .invoice>div:last-child {
             page-break-before: always;
-        }
+        } */
     }
     .invoice main .notices {
         padding: 7px;
@@ -257,11 +270,9 @@
     }
 </style>
 <body>
-    <div class="">
-        <div id="">
-            <div class="invoice overflow-auto">
-                <div class="header-div">
-                    <header class="header-content">
+    <div class="invoice">
+        <div class="header-div">
+            <header class="header-content">
                         <table>
                             <thead>
                                 <tr>
@@ -297,9 +308,9 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </header>
-                    <main>
-                        <div class="row contacts">
+            </header>
+            <main>
+                <div class="row contacts">
                             <table>
                                 <thead>
                                     <tr>
@@ -365,6 +376,46 @@
                                     <td class="unit">10000</td>
                                     <td class="total"> 5045495</td>
                                 </tr>
+                                <tr>
+                                    <td class="no">1</td>
+                                    <td class="text-left" style="min-width: 500px;border-right: 1px solid #fff">
+                                        <h4>Title</h4>
+                                        <p>Details</p>
+                                    </td>
+                                    <td class="qty">12</td>
+                                    <td class="unit">10000</td>
+                                    <td class="total"> 5045495</td>
+                                </tr>
+                                <tr>
+                                    <td class="no">1</td>
+                                    <td class="text-left" style="min-width: 500px;border-right: 1px solid #fff">
+                                        <h4>Title</h4>
+                                        <p>Details</p>
+                                    </td>
+                                    <td class="qty">12</td>
+                                    <td class="unit">10000</td>
+                                    <td class="total"> 5045495</td>
+                                </tr>
+                                <tr>
+                                    <td class="no">1</td>
+                                    <td class="text-left" style="min-width: 500px;border-right: 1px solid #fff">
+                                        <h4>Title</h4>
+                                        <p>Details</p>
+                                    </td>
+                                    <td class="qty">12</td>
+                                    <td class="unit">10000</td>
+                                    <td class="total"> 5045495</td>
+                                </tr>
+                                <tr>
+                                    <td class="no">1</td>
+                                    <td class="text-left" style="min-width: 500px;border-right: 1px solid #fff">
+                                        <h4>Title</h4>
+                                        <p>Details</p>
+                                    </td>
+                                    <td class="qty">12</td>
+                                    <td class="unit">10000</td>
+                                    <td class="total"> 5045495</td>
+                                </tr>
                             </tbody>
                             <tfoot style="font-size: 10px;">
                                 <tr>
@@ -396,14 +447,14 @@
                                 <b> Mode de règlement </b> Payment Mode <br>
                             </div>
                         </div>
-                    </main>
-                    <footer >
-                        <span> Compte Ecobank: <b class="black-footer">160940732001</b> Compte Orabank: <b class="black-footer">76495401901 </b>Compte BIA: <b class="black-footer">61001260006</b> Compte BOA: <b class="black-footer">004404430009</b> </span> <br>
-                        <b class="black-footer"> RCCM-NE-NIM-01-2017-A10-02845- NIF : 43391/P.</b>
-                    </footer>
-                </div>
-            </div>
+            </main>
+            
         </div>
     </div>
+
+    <footer>
+        <span> Compte Ecobank: <b class="black-footer">160940732001</b> Compte Orabank: <b class="black-footer">76495401901 </b>Compte BIA: <b class="black-footer">61001260006</b>  Compte BOA: <b class="black-footer">004404430009</b> </span>
+        <span><b class="black-footer"> RCCM-NE-NIM-01-2017-A10-02845- NIF : 43391/P.</b></span>
+    </footer>
 </body>
 </html>
